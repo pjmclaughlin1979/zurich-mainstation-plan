@@ -115,6 +115,8 @@
         spatialReference: 102100
       });
 
+      const groundOpacity = 0.9;
+
       const floorMapping = [{
         name: "Overview",
         originalNames: ["Erdgeschoss"],
@@ -480,7 +482,7 @@
       map.ground.navigationConstraint = {
         type: "none"
       };
-      map.ground.opacity = 0.8;
+      map.ground.opacity = groundOpacity;
       map.ground.surfaceColor = "white";
 
       map.layers.addMany([areasLayer, wallsLayer, servicesLayer, buildingsLayer]);
@@ -649,7 +651,7 @@
         console.log(event);
         if (event.state === "stop") {
           if (event.value === 0) {
-            view.map.ground.opacity = 0.8;
+            view.map.ground.opacity = groundOpacity;
             planeLayer.visible = false;
             buildingsLayer.visible = true;
           }
